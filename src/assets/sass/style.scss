@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-@import "setting/common";
+@use "setting/common";
 
-@import "section/main";
-@import "section/nav";
-@import "section/order";
+@use "section/main";
+@use "section/nav";
+@use "section/order";

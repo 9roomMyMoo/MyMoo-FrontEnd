@@ -14,7 +14,10 @@
     }
     .restaurant-info {
       padding: 0.8rem 0.9rem;
-      border-bottom: #e2e2e2 1rem solid;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      border-bottom: #e2e2e2 10px solid;
       .restaurant-title {
         font-size: 1.5rem;
         font-family: "Pretendard-Bold";
