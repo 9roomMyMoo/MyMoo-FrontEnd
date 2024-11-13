@@ -3,17 +3,12 @@ import MapIcon from "../../assets/img/Order/map.png";
 import CallIcon from "../../assets/img/Order/call.png";
 import TimeIcon from "../../assets/img/Order/time.png";
 import MenuBox from "../../components/Order/MenuBox";
-import AlarmIcon from "../../assets/img/Order/alarm.png";
 import HeartIcon from "../../assets/img/Order/heart.png";
-import BackIcon from "../../assets/img/Nav/back.png";
+import OrderNavbar from "../../components/Nav/OrderNavbar";
 const Order = () => {
   return (
     <div className="order-page">
-      <div className="order-header">
-        <img src={BackIcon} className="back-img" alt="img" />
-        <span className="header-title">떠밥 강남점</span>
-        <img src={AlarmIcon} className="alarm-img" alt="img" />
-      </div>
+      <OrderNavbar text="떠밥 강남점" />
       <div>
         <div className="order-top">
           <div className="restaurant-img">
