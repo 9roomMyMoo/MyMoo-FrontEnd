@@ -1,9 +1,19 @@
-import React from "react";
+import { React, useState } from "react";
 import OrderNavbar from "../../components/Nav/OrderNavbar";
 import MenuBox from "../../components/Order/MenuBox";
 import { useNavigate } from "react-router-dom";
 const OrderMenu = () => {
   const navigate = useNavigate();
+  const [cnt, setCnt] = useState(0);
+  const cntUp = () => {
+    setCnt(cnt + 1);
+  };
+  const cntDown = () => {
+    setCnt(cnt - 1);
+    if (cnt <= 0) {
+      setCnt(0);
+    }
+  };
   return (
     <div className="ordermenu-page">
       <OrderNavbar text="떠밥 강남점" />
@@ -23,9 +33,13 @@ const OrderMenu = () => {
           <div className="ordermenu-detail">
             <div className="price">10000원</div>
             <div className="counter">
-              <div className="minus">-</div>
-              <div className="cnt">1</div>
-              <div className="plus">+</div>
+              <div className="minus" onClick={cntDown}>
+                -
+              </div>
+              <div className="cnt">{cnt}</div>
+              <div className="plus" onClick={cntUp}>
+                +
+              </div>
             </div>
           </div>
         </div>
