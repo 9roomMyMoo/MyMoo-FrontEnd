@@ -2,6 +2,7 @@
   width: 100%;
   height: 100dvh;
   position: relative;
+  background-color: white;
   .order-header {
     width: 100%;
     position: fixed;
@@ -13,19 +14,72 @@
       height: 13rem;
     }
     .restaurant-info {
-      padding: 0.8rem 0.9rem;
+      padding: 0.8rem 0.9rem 1rem 0.9rem;
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      gap: 11px;
       border-bottom: #e2e2e2 10px solid;
       .restaurant-title {
         font-size: 1.5rem;
-        font-family: "Pretendard-Bold";
+        font-family: "Pretendard-SemiBold";
       }
       .detail-txt {
+        display: flex;
+        align-items: center;
+        gap: 3px;
         font-size: 0.9rem;
         color: #5c5c5c;
         font-family: "Pretnedard-Regular";
+      }
+    }
+  }
+  .order-bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem 0.9rem;
+    gap: 12.9px;
+    padding-bottom: 75px;
+    background-color: white;
+    .reco-menu {
+      font-size: 1.3rem;
+      font-family: "Pretendard-SemiBold";
+    }
+    .menu-box {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      background-color: white;
+      .menu-detail {
+        display: flex;
+        gap: 8px;
+      }
+      .menu-img {
+        width: 39%;
+        height: 8rem;
+        border: #e2e2e2 solid 3px;
+        padding: 0.3rem;
+        border-radius: 5px;
+      }
+      .menu-name {
+        font-size: 1rem;
+        font-family: "Pretendard-SemiBold";
+      }
+      .menu-subtxt {
+        color: #999999;
+        font-size: 0.8rem;
+        font-family: "Pretendard-Regular";
+      }
+      .menu-price {
+        font-size: 0.9rem;
+        font-family: "Pretendard-Medium";
+      }
+      .menu-review {
+        display: flex;
+        gap: 3px;
+        flex-direction: row;
+        align-items: center;
+        color: #999999;
+        font-family: "Pretendard-Regular";
       }
     }
   }
@@ -44,4 +98,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.icon-img {
+  width: 21px;
+  display: flex;
 }

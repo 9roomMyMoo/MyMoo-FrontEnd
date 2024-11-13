@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./components/Main/Main";
 import NavBar from "./components/Nav/Navbar";
-import Order from "./components/Order/Order";
+import Order from "./pages/Order/Order";
 
 const App = () => {
   return (
