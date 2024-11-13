@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./components/Main/Main";
 import NavBar from "./components/Nav/Navbar";
+import Order from "./pages/Order/Order";
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
         <div className="app-main">
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/order/" element={<Main />} />
+            <Route path="/order/" element={<Order />} />
           </Routes>
           <NavBar />
         </div>
