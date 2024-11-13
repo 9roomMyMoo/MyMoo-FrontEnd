@@ -3,10 +3,12 @@ import MapIcon from "../../assets/img/Order/map.png";
 import CallIcon from "../../assets/img/Order/call.png";
 import TimeIcon from "../../assets/img/Order/time.png";
 import MenuBox from "../../components/Order/MenuBox";
+import HeartIcon from "../../assets/img/Order/heart.png";
+import OrderNavbar from "../../components/Nav/OrderNavbar";
 const Order = () => {
   return (
     <div className="order-page">
-      <div className="order-header"></div>
+      <OrderNavbar text="떠밥 강남점" />
       <div>
         <div className="order-top">
           <div className="restaurant-img">
@@ -17,6 +19,9 @@ const Order = () => {
             />
           </div>
           <div className="restaurant-info flex-col">
+            <div className="info-heart-icon">
+              <img src={HeartIcon} alt="img" className="heart-img" />
+            </div>
             <div className="restaurant-title">떠밥 강남점</div>
             <div className="restaurant-star">⭐⭐⭐ 3.9</div>
             <div className="restaurant-place detail-txt">
