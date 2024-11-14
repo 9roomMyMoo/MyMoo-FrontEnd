@@ -5,6 +5,7 @@ import NavBar from "./components/Nav/Navbar";
 import Order from "./pages/Order/Order";
 import OrderPay from "./pages/Order/OrderPay";
 import OrderMenu from "./pages/Order/OrderMenu";
+import OrderFinish from "./pages/Order/OrderFinish";
 const App = () => {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ const App = () => {
             <Route path="/order/:place" element={<OrderMenu />} />
             <Route path="/order/" element={<Order />} />
             <Route path="/pay" element={<OrderPay />} />
+            <Route path="/finish" element={<OrderFinish />} />
           </Routes>
           <NavBar />
         </div>

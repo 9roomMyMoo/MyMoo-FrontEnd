@@ -1,3 +1,18 @@
+// 애니메이션
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 // 헤더 컴포넌트
 .order-header {
   width: 100%;
@@ -74,6 +89,7 @@
     .restaurant-img {
       width: 100%;
       height: 13rem;
+      overflow: hidden;
     }
     .restaurant-info {
       padding: 0.8rem 0.9rem 1rem 0.9rem;
@@ -194,6 +210,7 @@
     .ordermenu-img {
       width: 100%;
       height: 13rem;
+      overflow: hidden;
     }
     .ordermenu-info {
       padding: 0.8rem 0.9rem 1rem 0.9rem;
@@ -300,6 +317,101 @@
     }
   }
 }
+.orderfinish-page {
+  width: 100%;
+  height: 100dvh;
+  position: relative;
+  background-color: white;
+
+  .orderfinish-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 25% 0.8rem 5% 0.8rem;
+    border-bottom: solid #e2e2e2 7px;
+    .success-img {
+      width: 30%;
+      margin: 0 auto;
+      animation: popUp 2s 1;
+    }
+    .success-title {
+      margin-top: 1rem;
+      font-family: "Pretendard-SemiBold";
+      font-size: 1.2rem;
+    }
+    .btn-area {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 8px;
+      margin: 20% 0;
+      .home-btn {
+        width: 25%;
+        padding: 0.9rem 0;
+        font-family: "Pretendard-Medium";
+        font-size: 0.9rem;
+        border-radius: 30px;
+        background-color: #e2e2e2;
+      }
+      .orderlist-btn {
+        width: 39%;
+        padding: 0.9rem 0;
+        font-family: "Pretendard-Medium";
+        font-size: 0.9rem;
+        border-radius: 30px;
+        background-color: #ffe136;
+      }
+    }
+    .orderfinish-detail {
+      width: 100%;
+      padding-top: 1.1rem;
+      border-top: solid #e2e2e2 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      .detail-txt {
+        font-family: "Pretendard-Medium";
+        font-size: 0.8rem;
+        color: #999999;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+  .orderfinish-bottom {
+    padding: 1.2rem 0.8rem 80px 0.8rem;
+
+    .reco-title {
+      font-family: "Pretendard-SemiBold";
+      font-size: 1.2rem;
+    }
+    .reco-area {
+      margin-top: 11px;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 10px;
+    }
+    .reco-restaurant {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 43%;
+      .reco-img {
+        border-radius: 10px;
+        overflow: hidden;
+        height: 122px;
+      }
+      .reco-res-title {
+        font-family: "Pretendard-Medium";
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -317,4 +429,7 @@
 .icon-img {
   width: 21px;
   display: flex;
+}
+.grey {
+  color: #5c5c5c;
 }
