@@ -14,8 +14,8 @@ const OrderPay = () => {
         <div className="Qr-zone">
           <QRCodeCanvas
             className="Qr-img"
-            onClick={() => navigate("/")}
-            value={"홈으로"}
+            onClick={() => navigate("/finish")}
+            value={"주문 완료!"}
           />
         </div>
         <div className="timer-zone">02:29</div>

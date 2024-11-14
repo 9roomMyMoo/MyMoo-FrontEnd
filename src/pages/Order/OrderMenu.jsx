@@ -1,9 +1,19 @@
-import React from "react";
+import { React, useState } from "react";
 import OrderNavbar from "../../components/Nav/OrderNavbar";
 import MenuBox from "../../components/Order/MenuBox";
 import { useNavigate } from "react-router-dom";
 const OrderMenu = () => {
   const navigate = useNavigate();
+  const [cnt, setCnt] = useState(0);
+  const cntUp = () => {
+    setCnt(cnt + 1);
+  };
+  const cntDown = () => {
+    setCnt(cnt - 1);
+    if (cnt <= 0) {
+      setCnt(0);
+    }
+  };
   return (
     <div className="ordermenu-page">
       <OrderNavbar text="떠밥 강남점" />
@@ -23,18 +33,22 @@ const OrderMenu = () => {
           <div className="ordermenu-detail">
             <div className="price">10000원</div>
             <div className="counter">
-              <div className="minus">-</div>
-              <div className="cnt">1</div>
-              <div className="plus">+</div>
+              <div className="minus" onClick={cntDown}>
+                -
+              </div>
+              <div className="cnt">{cnt}</div>
+              <div className="plus" onClick={cntUp}>
+                +
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="ordermenu-bottom">
         <div className="add-menu">추가 메뉴</div>
-        <MenuBox />
-        <MenuBox />
-        <MenuBox />
+        <MenuBox menu="(BEST) 동파육 덮밥" price="12,000원" />
+        <MenuBox menu="(BEST) 갈비 덮밥" price="11,000원" />
+        <MenuBox menu="마파두부 덮밥" price="11,000원" />
       </div>
       <div className="ordermenu-pay-area">
         <div className="pay-area-detail">
