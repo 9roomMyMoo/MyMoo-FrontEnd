@@ -40,9 +40,9 @@ const Order = () => {
         </div>
         <div className="order-bottom">
           <div className="reco-menu">추천 메뉴</div>
-          <MenuBox />
-          <MenuBox />
-          <MenuBox />
+          <MenuBox menu="(BEST) 동파육 덮밥" price="12,000원" />
+          <MenuBox menu="(BEST) 갈비 덮밥" price="11,000원" />
+          <MenuBox menu="마파두부 덮밥" price="11,000원" />
         </div>
       </div>
     </div>
