@@ -1,17 +1,95 @@
+// 애니메이션
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+// 헤더 컴포넌트
+.order-header {
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  max-width: 390px;
+  padding: 0.1rem 0.2rem;
+  display: flex;
+
+  align-items: center;
+  .back-img {
+    width: 40px;
+  }
+  .alarm-img {
+    margin-top: 0.2rem;
+    height: 45px;
+    margin-left: auto;
+  }
+  .header-title {
+    font-size: 1.2rem;
+    font-family: "Pretendard-SemiBold";
+  }
+}
+// 메뉴박스 컴포넌트
+.menu-box {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background-color: white;
+  cursor: pointer;
+  .menu-detail {
+    display: flex;
+    gap: 8px;
+  }
+  .menu-img {
+    width: 39%;
+    height: 8rem;
+    border: #e2e2e2 solid 3px;
+    padding: 0.3rem;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .menu-name {
+    font-size: 1rem;
+    font-family: "Pretendard-SemiBold";
+  }
+  .menu-subtxt {
+    color: #999999;
+    font-size: 0.8rem;
+    font-family: "Pretendard-Regular";
+  }
+  .menu-price {
+    font-size: 0.9rem;
+    font-family: "Pretendard-Medium";
+  }
+  .menu-review {
+    display: flex;
+    gap: 3px;
+    flex-direction: row;
+    align-items: center;
+    color: #999999;
+    font-family: "Pretendard-Regular";
+  }
+}
 .order-page {
   width: 100%;
   height: 100dvh;
   position: relative;
   background-color: white;
-  .order-header {
-    width: 100%;
-    position: fixed;
-  }
+
   .order-top {
+    padding-top: 40px;
     width: 100%;
     .restaurant-img {
       width: 100%;
       height: 13rem;
+      overflow: hidden;
     }
     .restaurant-info {
       padding: 0.8rem 0.9rem 1rem 0.9rem;
@@ -19,6 +97,24 @@
       flex-direction: column;
       gap: 11px;
       border-bottom: #e2e2e2 10px solid;
+      .info-heart-icon {
+        text-align: right;
+        margin-top: -0.3rem;
+        width: 93%;
+        position: absolute;
+        .heart-img {
+          width: 40px;
+        }
+      }
+      .info-heart-icon {
+        text-align: right;
+        margin-top: -0.3rem;
+        width: 93%;
+        position: absolute;
+        .heart-img {
+          width: 40px;
+        }
+      }
       .restaurant-title {
         font-size: 1.5rem;
         font-family: "Pretendard-SemiBold";
@@ -44,47 +140,287 @@
       font-size: 1.3rem;
       font-family: "Pretendard-SemiBold";
     }
-    .menu-box {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      background-color: white;
-      .menu-detail {
-        display: flex;
-        gap: 8px;
-      }
-      .menu-img {
-        width: 39%;
-        height: 8rem;
-        border: #e2e2e2 solid 3px;
-        padding: 0.3rem;
-        border-radius: 5px;
-      }
-      .menu-name {
-        font-size: 1rem;
-        font-family: "Pretendard-SemiBold";
-      }
-      .menu-subtxt {
-        color: #999999;
-        font-size: 0.8rem;
-        font-family: "Pretendard-Regular";
-      }
-      .menu-price {
-        font-size: 0.9rem;
-        font-family: "Pretendard-Medium";
-      }
-      .menu-review {
-        display: flex;
-        gap: 3px;
-        flex-direction: row;
-        align-items: center;
-        color: #999999;
-        font-family: "Pretendard-Regular";
-      }
+  }
+}
+
+.orderpay-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .orderpay-top {
+    border-bottom: solid #e2e2e2 8px;
+    padding: 25% 0 10% 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .menu-name {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: "Pretendard-SemiBold";
+    font-size: 1.5rem;
+    .menu-place {
+      font-family: "Pretendard-Regular";
+      font-size: 1rem;
+      color: #999999;
+    }
+  }
+  .Qr-zone {
+    text-align: center;
+
+    margin-bottom: 1.2rem;
+    .Qr-img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .timer-zone {
+    color: #ffb800;
+    font-family: "Pretendard-SemiBold";
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+    text-align: center;
+  }
+  .notice-txt {
+    color: #999999;
+    text-align: center;
+    font-size: 1rem;
+    font-family: "Pretendard-Regular";
+  }
+  .orderpay-bottom {
+    overflow: hidden;
+    padding: 1.5rem 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-bottom: 75px;
+    .notice-title {
+      overflow: hidden;
+      font-family: "Pretendard-SemiBold";
+      font-size: 1.2rem;
+    }
+    .notice-box {
+      overflow: hidden;
+      width: 100%;
     }
   }
 }
 
+.ordermenu-page {
+  width: 100%;
+  height: 100dvh;
+  position: relative;
+  background-color: white;
+  .ordermenu-top {
+    padding-top: 40px;
+    width: 100%;
+    .ordermenu-img {
+      width: 100%;
+      height: 13rem;
+      overflow: hidden;
+    }
+    .ordermenu-info {
+      padding: 0.8rem 0.9rem 1rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      border-bottom: #e2e2e2 10px solid;
+      .menu-title {
+        font-size: 1.5rem;
+        font-family: "Pretendard-SemiBold";
+      }
+      .detail-txt {
+        margin-top: 7px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        font-size: 0.9rem;
+        color: #5c5c5c;
+        font-family: "Pretnedard-Regular";
+      }
+      .ordermenu-detail {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 1rem;
+        align-items: center;
+        .price {
+          font-family: "Pretendard-SemiBold";
+          font-size: 1.2rem;
+        }
+        .counter {
+          cursor: pointer;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          width: 25%;
+          padding: 0.2rem 0.5rem;
+          gap: 8px;
+          align-items: center;
+          border-radius: 30px;
+          border: solid #e2e2e2 2px;
+        }
+        .cnt {
+          font-family: "Pretendard-Bold";
+          font-size: 0.9rem;
+          color: black;
+          display: flex;
+          margin-left: 0.1rem;
+        }
+        .minus,
+        .plus {
+          display: flex;
+          font-family: "Pretendard-SemiBold";
+          color: #b3b3b3;
+          font-size: 1.5rem;
+        }
+        .plus {
+          margin-top: -0.2rem;
+        }
+      }
+    }
+  }
+  .ordermenu-bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem 0.9rem;
+    gap: 12.9px;
+    padding-bottom: 153px;
+    background-color: white;
+    .add-menu {
+      font-size: 1.3rem;
+      font-family: "Pretendard-SemiBold";
+    }
+  }
+  .ordermenu-pay-area {
+    position: fixed;
+    bottom: 65px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.8rem 0.9rem;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.25);
+    .pay-area-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      .price {
+        font-family: "Pretendard-SemiBold";
+        font-size: 1rem;
+      }
+      .txt {
+        font-family: "Pretendard-Regular";
+        color: #999999;
+      }
+    }
+    .order-btn {
+      background-color: #ffe136;
+      border-radius: 5px;
+      font-family: "Pretendard-SemiBold";
+      text-align: center;
+      width: 39%;
+      padding: 0.8rem 0;
+    }
+  }
+}
+.orderfinish-page {
+  width: 100%;
+  height: 100dvh;
+  position: relative;
+  background-color: white;
+
+  .orderfinish-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 25% 0.8rem 5% 0.8rem;
+    border-bottom: solid #e2e2e2 7px;
+    .success-img {
+      width: 30%;
+      margin: 0 auto;
+      animation: popUp 2s 1;
+    }
+    .success-title {
+      margin-top: 1rem;
+      font-family: "Pretendard-SemiBold";
+      font-size: 1.2rem;
+    }
+    .btn-area {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 8px;
+      margin: 20% 0;
+      .home-btn {
+        width: 25%;
+        padding: 0.9rem 0;
+        font-family: "Pretendard-Medium";
+        font-size: 0.9rem;
+        border-radius: 30px;
+        background-color: #e2e2e2;
+      }
+      .orderlist-btn {
+        width: 39%;
+        padding: 0.9rem 0;
+        font-family: "Pretendard-Medium";
+        font-size: 0.9rem;
+        border-radius: 30px;
+        background-color: #ffe136;
+      }
+    }
+    .orderfinish-detail {
+      width: 100%;
+      padding-top: 1.1rem;
+      border-top: solid #e2e2e2 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      .detail-txt {
+        font-family: "Pretendard-Medium";
+        font-size: 0.8rem;
+        color: #999999;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+  .orderfinish-bottom {
+    padding: 1.2rem 0.8rem 80px 0.8rem;
+
+    .reco-title {
+      font-family: "Pretendard-SemiBold";
+      font-size: 1.2rem;
+    }
+    .reco-area {
+      margin-top: 11px;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 10px;
+    }
+    .reco-restaurant {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 43%;
+      .reco-img {
+        border-radius: 10px;
+        overflow: hidden;
+        height: 122px;
+      }
+      .reco-res-title {
+        font-family: "Pretendard-Medium";
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -102,4 +438,7 @@
 .icon-img {
   width: 21px;
   display: flex;
+}
+.grey {
+  color: #5c5c5c;
 }

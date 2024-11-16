@@ -4,6 +4,8 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  max-width: 390px;
+  overflow-x: hidden;
 }
 
 body,
@@ -16,7 +18,7 @@ body,
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
-  @media (max-width: 500px) {
+  @media (max-width: 390px) {
     font-size: 3.2vw;
   }
 }
@@ -85,14 +87,14 @@ body::-webkit-scrollbar {
 
 .app-main {
   background-color: white;
-  max-width: 500px;
+  max-width: 390px;
   width: 100%;
   height: 100dvh;
   display: flex;
   flex-direction: column;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  @media (max-width: 500px) {
+  @media (max-width: 390px) {
     width: 100%;
   }
 }
