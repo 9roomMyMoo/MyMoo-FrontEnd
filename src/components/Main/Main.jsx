@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import AlarmIcon from "../../assets/img/Main/alarm.svg"; 
+import { useNavigate } from "react-router-dom";
 import SearchIcon from "../../assets/img/Main/Search.svg";
 import RightDirectionIcon from "../../assets/img/Main/right direction.svg"; 
 import Ad1Icon from "../../assets/img/Main/ad.svg";
+import Ad2Icon from "../../assets/img/Main/ad.svg";
+import Ad3Icon from "../../assets/img/Main/ad.svg";
 import profileImg from "../../assets/img/Main/profile.svg";
 import RecentImg from "../../assets/img/Main/recent.svg";
 import ReviewCard from "./ReviewCard";
@@ -81,8 +84,9 @@ const useInterval = (callback, delay) => {
 const Main = () => {
   const [currentLocation, setCurrentLocation] = useState("위치 정보를 가져오는 중");
   const [bannerIndex, setBannerIndex] = useState(0);
+  const navigate = useNavigate();
 
-  const banners = [Ad1Icon, Ad1Icon, Ad1Icon];
+  const banners = [Ad1Icon, Ad2Icon, Ad3Icon];
 
   useInterval(() => {
     setBannerIndex((prevIndex) => (prevIndex + 1) % banners.length);
@@ -134,15 +138,15 @@ const Main = () => {
       <header className="header">
         <h1>로고</h1>
         <div className="icons">
-          <img src={SearchIcon} alt="검색 아이콘" className="icon" />
+        <img src={SearchIcon} alt="검색 아이콘" className="icon" onClick={() => navigate('/search')} />
           <img src={AlarmIcon} alt="알림 아이콘" className="icon" />
         </div>
       </header>
 
       <div className="banner-container">
-        <div className="banner" style={{ transform: `translateX(-${bannerIndex * 100}%)` }}>
+        <div className="banner" > 
           {banners.map((banner, index) => (
-            <img key={index} src={banner} alt={`배너 ${index + 1}`} className="banner-image" />
+            <img key={index} src={banner} className="banner-image" />
           ))}
         </div>
       </div>

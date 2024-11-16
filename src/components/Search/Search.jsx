@@ -6,8 +6,6 @@ import TimeIcon from "../../assets/img/Search/time.svg";
 import ShopCard from "../Main/ShopCard";
 import RecentImg from "../../assets/img/Main/recent.svg";
 
-const dummyRecentSearches = ["김밥천국", "떡볶이", "맥도날드", "원할머니 보쌈", "연탄돼지"];
-
 const dummyPopularRestaurants = [
   { id: 1, name: "엄마 김치찌개", rating: 4.4, img: RecentImg },
   { id: 2, name: "경양카츠 강남점", rating: 4.2, img: RecentImg },
@@ -16,6 +14,11 @@ const dummyPopularRestaurants = [
 
 const SearchPage = () => {
   const [currentTime, setCurrentTime] = useState("");
+  const [recentSearches, setRecentSearches] = useState(() => {
+    const savedSearches = localStorage.getItem("recentSearches");
+    return savedSearches ? JSON.parse(savedSearches) : [];
+  });
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     const updateCurrentTime = () => {
@@ -34,24 +37,64 @@ const SearchPage = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleSearch = () => {
+    if (!searchInput.trim()) return; 
+    const updatedSearches = [searchInput, ...recentSearches.filter((item) => item !== searchInput)]; // 중복 제거
+    setRecentSearches(updatedSearches);
+    localStorage.setItem("recentSearches", JSON.stringify(updatedSearches));
+    setSearchInput(""); 
+  };
+
+  const handleRemoveTag = (search) => {
+    const updatedSearches = recentSearches.filter((item) => item !== search);
+    setRecentSearches(updatedSearches);
+    localStorage.setItem("recentSearches", JSON.stringify(updatedSearches));
+  };
+
+  const handleClearAll = () => {
+    setRecentSearches([]);
+    localStorage.removeItem("recentSearches");
+  };
+
   return (
     <div className="search-page">
       <img src={BackIcon} alt="뒤로가기" className="back-icon" />
       <div className="search-bar">
-        <input type="text" placeholder="음식점, 메뉴, 주소를 검색해보세요" />
-        <img src={LocateIcon} alt="위치 아이콘" className="icon locate-icon" />
-        <img src={SearchIcon} alt="검색" className="icon search-icon" />
+        <input
+          type="text"
+          placeholder="음식점, 메뉴, 주소를 검색해보세요"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          onKeyPress={(e) => e.key === "Enter" && handleSearch()} 
+        />
+        <img
+          src={LocateIcon}
+          alt="위치 아이콘"
+          className="icon locate-icon"
+          onClick={handleSearch}
+        />
+        <img
+          src={SearchIcon}
+          alt="검색"
+          className="icon search-icon"
+          onClick={handleSearch}
+        />
       </div>
 
       <section className="recent-searches">
         <div className="header-row">
           <h4>최근 검색어</h4>
-          <button className="clear-all">전체 지우기</button>
+          <button className="clear-all" onClick={handleClearAll}>
+            전체 지우기
+          </button>
         </div>
         <div className="tags">
-          {dummyRecentSearches.map((search, index) => (
+          {recentSearches.map((search, index) => (
             <span key={index} className="search-tag">
-              {search} <button className="remove-tag">x</button>
+              {search}{" "}
+              <button className="remove-tag" onClick={() => handleRemoveTag(search)}>
+                x
+              </button>
             </span>
           ))}
         </div>

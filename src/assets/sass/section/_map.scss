@@ -21,7 +21,7 @@
       margin-top: 45px;
 
       &.search-icon {
-        margin-left: 200px;
+        margin-left: 230px;
       }
 
       &.back-icon {
@@ -30,7 +30,7 @@
       }
 
       &.alarm-icon {
-        margin-right: 30px;
+        margin-right: 5px;
       }
     }
   }
@@ -38,11 +38,11 @@
   .search-bar {
     position: absolute;
     top: 120px;
-    left: 10px;
+    left: 18px;
     right: 16px;
     display: flex;
     align-items: center;
-    width: 350px;
+    width: 360px;
     height: 44px;
     padding: 0 10px;
     background-color: #f9f9f9;

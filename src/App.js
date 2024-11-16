@@ -8,6 +8,8 @@ import Order from "./pages/Order/Order";
 import OrderPay from "./pages/Order/OrderPay";
 import OrderMenu from "./pages/Order/OrderMenu";
 import OrderFinish from "./pages/Order/OrderFinish";
+import List from "./components/List/List";
+
 const App = () => {
   return (
     <BrowserRouter future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
@@ -17,10 +19,11 @@ const App = () => {
             <Route path="/" element={<Main />} />
             <Route path="/order/:place" element={<OrderMenu />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/list" element={<List />} />
             <Route path="/map" element={<Map />} />
             <Route path="/order/" element={<Order />} />
             <Route path="/pay" element={<OrderPay />} />
-            <Route path="/finish" element={<OrderFinish />} />
+            <Route path="/list" element={<List />} />
           </Routes>
           <NavBar />
         </div>
