@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Price1 from "../../assets/img/Order/price/1.png";
+import PriceBox from "../../components/Order/PriceBox";
 import MapIcon from "../../assets/img/Order/map.png";
 import CallIcon from "../../assets/img/Order/call.png";
 import TimeIcon from "../../assets/img/Order/time.png";
@@ -83,17 +83,12 @@ const Order = () => {
           )}
           {selectId === 2 && (
             <div className="menu-2-area">
-              <div className="reco-menu">금액권</div>
-              <div className="donate-price-box">
-                <div className="donate-price-img">
-                  <img src={Price1} alt="이미지" className="img-width" />
-                </div>
-                <div className="donate-price-detail">
-                  <div className="donate-price-title">5000원권</div>
-                  <div className="price-donator">후원자 이*림님</div>
-                  <div className="donate-price-date">후원날짜 2024.11.11</div>
-                </div>
-              </div>
+              <div className="donate-rate">5000-10000원</div>
+              <PriceBox price="5000" donator={"이*림"} date={"2024.11.11"} />
+              <PriceBox price="9000" donator={"이*림"} date={"2024.11.11"} />
+              <div className="donate-rate">11000-15000원</div>
+              <PriceBox price="12000" donator={"이*림"} date={"2024.11.11"} />
+              <PriceBox price="19000" donator={"이*림"} date={"2024.11.11"} />
             </div>
           )}
         </div>
