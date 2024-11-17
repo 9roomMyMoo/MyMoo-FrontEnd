@@ -12,8 +12,10 @@ import List from "./components/List/List";
 
 const App = () => {
   return (
-    <BrowserRouter future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
-        <div className="common-layout">
+    <BrowserRouter
+      future={{ v7_relativeSplatPath: true, v7_startTransition: true }}
+    >
+      <div className="common-layout">
         <div className="app-main">
           <Routes>
             <Route path="/" element={<Main />} />
@@ -24,10 +26,11 @@ const App = () => {
             <Route path="/order/" element={<Order />} />
             <Route path="/pay" element={<OrderPay />} />
             <Route path="/list" element={<List />} />
+            <Route path="/finish" element={<OrderFinish />} />
           </Routes>
           <NavBar />
         </div>
-        </div>
+      </div>
     </BrowserRouter>
   );
 };
