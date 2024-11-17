@@ -96,7 +96,7 @@
       display: flex;
       flex-direction: column;
       gap: 11px;
-      border-bottom: #e2e2e2 10px solid;
+      border-bottom: #e2e2e2 7px solid;
       .info-heart-icon {
         text-align: right;
         margin-top: -0.3rem;
@@ -127,6 +127,43 @@
         color: #5c5c5c;
         font-family: "Pretnedard-Regular";
       }
+      .price-area {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: -1rem;
+        padding-right: 0.2rem;
+        .cum-price {
+          margin-left: auto;
+          color: #b3b3b3;
+          font-size: 0.9rem;
+          font-family: "Pretendard-Regular";
+        }
+        .total-price {
+          margin-left: auto;
+          color: #5c5c5c;
+          font-size: 1.1rem;
+          font-family: "Pretendard-Medium";
+        }
+      }
+    }
+  }
+  .menu-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: solid #e2e2e2 2px;
+    .toggle {
+      flex: 1;
+      color: #5c5c5c;
+      font-size: 1rem;
+      font-family: "Pretendard-Regular";
+      padding: 0.9rem 0;
+    }
+    .select {
+      color: #ffb800;
+      border-bottom: solid #ffb800 3px;
     }
   }
   .order-bottom {
@@ -136,6 +173,7 @@
     gap: 12.9px;
     padding-bottom: 75px;
     background-color: white;
+
     .reco-menu {
       font-size: 1.3rem;
       font-family: "Pretendard-SemiBold";
@@ -441,4 +479,10 @@
 }
 .grey {
   color: #5c5c5c;
+}
+.yellow {
+  color: #ffb800;
+}
+.bolder {
+  font-family: "Pretendard-Bold";
 }
