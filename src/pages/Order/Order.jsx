@@ -86,11 +86,31 @@ const Order = () => {
           {selectId === 2 && (
             <div className="menu-2-area">
               <div className="donate-rate">5000-10000원</div>
-              <PriceBox price="5000" donator={"이*림"} date={"2024.11.11"} />
-              <PriceBox price="9000" donator={"이*림"} date={"2024.11.11"} />
+              <PriceBox
+                price="5000"
+                donator={"이*림"}
+                date={"2024.11.11"}
+                place={"떠밥 강남점"}
+              />
+              <PriceBox
+                price="9000"
+                donator={"이*림"}
+                date={"2024.11.11"}
+                place={"떠밥 강남점"}
+              />
               <div className="donate-rate">11000-15000원</div>
-              <PriceBox price="12000" donator={"이*림"} date={"2024.11.11"} />
-              <PriceBox price="19000" donator={"이*림"} date={"2024.11.11"} />
+              <PriceBox
+                price="12000"
+                donator={"이*림"}
+                date={"2024.11.11"}
+                place={"이삭토스트 신설동점"}
+              />
+              <PriceBox
+                price="19000"
+                donator={"이*림"}
+                date={"2024.11.11"}
+                place={"육전식당 신설동점"}
+              />
             </div>
           )}
         </div>

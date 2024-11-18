@@ -1,24 +1,38 @@
 import { React, useState } from "react";
 import NoticeImg from "../../assets/img/Order/notice.png";
 import Price1 from "../../assets/img/Order/price/1.png";
+import Price2 from "../../assets/img/Order/price/2.png";
+import Price3 from "../../assets/img/Order/price/3.png";
 import QrZone from "../../components/Order/QrZone";
+import { useLocation } from "react-router-dom";
 const OrderPay = () => {
+  const location = useLocation();
+
   const [isShow, setIsShow] = useState(0);
   const closeQrBox = () => {
     console.log("d");
     setIsShow(0);
   };
+  let priceImg;
+  if (location.state.price <= 10000) {
+    priceImg = Price1;
+  } else if (location.state.price >= 11000 && location.state.price <= 15000) {
+    priceImg = Price2;
+  } else if (location.state.price >= 16000) {
+    priceImg = Price3;
+  }
+
   return (
     <div className="orderpay-page">
       {isShow ? <QrZone onClose={closeQrBox} /> : null}
       <div className="orderpay-top">
         <div className="menu-name">
-          <div className="menu-place">한솥도시락 신설동점</div>
-          1,0000원권
-          <div className="menu-place">후원자 이*림님</div>
+          <div className="menu-place">{location.state.place}</div>
+          {location.state.price}원권
+          <div className="menu-place">후원자 {location.state.donator}님</div>
         </div>
         <div>
-          <img src={Price1} alt="img" className="img-width" />
+          <img src={priceImg} alt="img" className="img-width" />
         </div>
         <div className="orderpay-notice">
           유의사항
