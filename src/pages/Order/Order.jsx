@@ -51,6 +51,7 @@ const Order = () => {
                 총 후원금 <span className="yellow bolder">125,000원</span>
               </div>
             </div>
+            <div className="donate-btn">식당 후원하기</div>
           </div>
         </div>
         <div className="menu-bar">
@@ -87,26 +88,26 @@ const Order = () => {
             <div className="menu-2-area">
               <div className="donate-rate">5000-10000원</div>
               <PriceBox
-                price="5000"
+                price={5000}
                 donator={"이*림"}
                 date={"2024.11.11"}
                 place={"떠밥 강남점"}
               />
               <PriceBox
-                price="9000"
+                price={9000}
                 donator={"이*림"}
                 date={"2024.11.11"}
                 place={"떠밥 강남점"}
               />
               <div className="donate-rate">11000-15000원</div>
               <PriceBox
-                price="12000"
+                price={12000}
                 donator={"이*림"}
                 date={"2024.11.11"}
                 place={"이삭토스트 신설동점"}
               />
               <PriceBox
-                price="19000"
+                price={19000}
                 donator={"이*림"}
                 date={"2024.11.11"}
                 place={"육전식당 신설동점"}

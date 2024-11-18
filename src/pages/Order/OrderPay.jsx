@@ -21,6 +21,7 @@ const OrderPay = () => {
   } else if (location.state.price >= 16000) {
     priceImg = Price3;
   }
+  const formattedPrice = location.state.price.toLocaleString();
 
   return (
     <div className="orderpay-page">
@@ -28,7 +29,7 @@ const OrderPay = () => {
       <div className="orderpay-top">
         <div className="menu-name">
           <div className="menu-place">{location.state.place}</div>
-          {location.state.price}원권
+          {formattedPrice}원권
           <div className="menu-place">후원자 {location.state.donator}님</div>
         </div>
         <div>

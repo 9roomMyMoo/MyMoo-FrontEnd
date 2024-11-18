@@ -17,6 +17,7 @@ const PriceBox = ({ price, donator, date, place }) => {
   } else if (price >= 16000) {
     priceImg = Price3;
   }
+  const formattedPrice = price.toLocaleString();
 
   return (
     <div onClick={goPay}>
@@ -25,7 +26,7 @@ const PriceBox = ({ price, donator, date, place }) => {
           <img src={priceImg} alt="이미지" className="img-width" />
         </div>
         <div className="donate-price-detail">
-          <div className="donate-price-title">{price}원권</div>
+          <div className="donate-price-title">{formattedPrice}원권</div>
           <div className="price-donator">
             후원자 <span className="grey">{donator}님</span>
           </div>
