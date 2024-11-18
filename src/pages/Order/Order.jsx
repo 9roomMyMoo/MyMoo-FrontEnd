@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import PriceBox from "../../components/Order/PriceBox";
+import PriceBox from "../../components/Order/PriceBox";
 import MapIcon from "../../assets/img/Order/map.png";
 import CallIcon from "../../assets/img/Order/call.png";
 import TimeIcon from "../../assets/img/Order/time.png";
@@ -12,10 +13,7 @@ const Order = () => {
   const menuSelect = (id) => {
     setSelectId(id);
   };
-  const [selectId, setSelectId] = useState(1);
-  const menuSelect = (id) => {
-    setSelectId(id);
-  };
+
   return (
     <div className="order-page">
       <OrderNavbar text="떠밥 강남점" />
@@ -54,34 +52,7 @@ const Order = () => {
                 총 후원금 <span className="yellow bolder">125,000원</span>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="menu-bar">
-          <div
-            onClick={() => menuSelect(1)}
-            className={`toggle ${selectId === 1 ? "select" : ""}`}
-          >
-            메뉴
-          </div>
-          <div
-            onClick={() => menuSelect(2)}
-            className={`toggle ${selectId === 2 ? "select" : ""}`}
-          >
-            금액권 목록
-          </div>
-          <div
-            onClick={() => menuSelect(3)}
-            className={`toggle ${selectId === 3 ? "select" : ""}`}
-          >
-            리뷰
-            <div className="price-area">
-              <div className="cum-price">
-                누적 후원금 <span className="bolder">350,000원</span>
-              </div>
-              <div className="total-price">
-                총 후원금 <span className="yellow bolder">125,000원</span>
-              </div>
-            </div>
+            <div className="donate-btn">식당 후원하기</div>
           </div>
         </div>
         <div className="menu-bar">
@@ -104,6 +75,7 @@ const Order = () => {
             리뷰
           </div>
         </div>
+
         <div className="order-bottom">
           {selectId === 1 && (
             <div className="menu-1-area">
@@ -116,11 +88,31 @@ const Order = () => {
           {selectId === 2 && (
             <div className="menu-2-area">
               <div className="donate-rate">5000-10000원</div>
-              <PriceBox price="5000" donator={"이*림"} date={"2024.11.11"} />
-              <PriceBox price="9000" donator={"이*림"} date={"2024.11.11"} />
+              <PriceBox
+                price={5000}
+                donator={"이*림"}
+                date={"2024.11.11"}
+                place={"떠밥 강남점"}
+              />
+              <PriceBox
+                price={9000}
+                donator={"이*림"}
+                date={"2024.11.11"}
+                place={"떠밥 강남점"}
+              />
               <div className="donate-rate">11000-15000원</div>
-              <PriceBox price="12000" donator={"이*림"} date={"2024.11.11"} />
-              <PriceBox price="19000" donator={"이*림"} date={"2024.11.11"} />
+              <PriceBox
+                price={12000}
+                donator={"이*림"}
+                date={"2024.11.11"}
+                place={"이삭토스트 신설동점"}
+              />
+              <PriceBox
+                price={19000}
+                donator={"이*림"}
+                date={"2024.11.11"}
+                place={"육전식당 신설동점"}
+              />
             </div>
           )}
         </div>
