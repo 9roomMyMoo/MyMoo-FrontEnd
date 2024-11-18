@@ -2,8 +2,12 @@ import React from "react";
 import Price1 from "../../assets/img/Order/price/1.png";
 import Price2 from "../../assets/img/Order/price/2.png";
 import Price3 from "../../assets/img/Order/price/3.png";
-
+import { useNavigate } from "react-router-dom";
 const PriceBox = ({ price, donator, date }) => {
+  const navigate = useNavigate();
+  const goPay = () => {
+    navigate("/orderpay", { state: { price, donator, date } });
+  };
   let priceImg;
 
   if (price <= 10000) {
@@ -15,7 +19,7 @@ const PriceBox = ({ price, donator, date }) => {
   }
 
   return (
-    <div>
+    <div onClick={goPay}>
       <div className="donate-price-box">
         <div className="donate-price-img">
           <img src={priceImg} alt="이미지" className="img-width" />

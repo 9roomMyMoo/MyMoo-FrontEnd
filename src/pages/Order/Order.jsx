@@ -12,10 +12,7 @@ const Order = () => {
   const menuSelect = (id) => {
     setSelectId(id);
   };
-  const [selectId, setSelectId] = useState(1);
-  const menuSelect = (id) => {
-    setSelectId(id);
-  };
+
   return (
     <div className="order-page">
       <OrderNavbar text="떠밥 강남점" />
@@ -74,36 +71,9 @@ const Order = () => {
             className={`toggle ${selectId === 3 ? "select" : ""}`}
           >
             리뷰
-            <div className="price-area">
-              <div className="cum-price">
-                누적 후원금 <span className="bolder">350,000원</span>
-              </div>
-              <div className="total-price">
-                총 후원금 <span className="yellow bolder">125,000원</span>
-              </div>
-            </div>
           </div>
         </div>
-        <div className="menu-bar">
-          <div
-            onClick={() => menuSelect(1)}
-            className={`toggle ${selectId === 1 ? "select" : ""}`}
-          >
-            메뉴
-          </div>
-          <div
-            onClick={() => menuSelect(2)}
-            className={`toggle ${selectId === 2 ? "select" : ""}`}
-          >
-            금액권 목록
-          </div>
-          <div
-            onClick={() => menuSelect(3)}
-            className={`toggle ${selectId === 3 ? "select" : ""}`}
-          >
-            리뷰
-          </div>
-        </div>
+
         <div className="order-bottom">
           {selectId === 1 && (
             <div className="menu-1-area">
