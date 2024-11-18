@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import PriceBox from "../../components/Order/PriceBox";
+import PriceBox from "../../components/Order/PriceBox";
 import MapIcon from "../../assets/img/Order/map.png";
 import CallIcon from "../../assets/img/Order/call.png";
 import TimeIcon from "../../assets/img/Order/time.png";
