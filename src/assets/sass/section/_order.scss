@@ -179,6 +179,45 @@
       font-family: "Pretendard-SemiBold";
     }
   }
+  .menu-2-area {
+    .donate-rate {
+      color: #b3b3b3;
+      font-size: 0.9rem;
+      font-family: "Pretendard-SemiBold";
+      margin-bottom: 8px;
+    }
+    .donate-price-box {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      border-bottom: solid #d8d8d8 1px;
+      padding-bottom: 13px;
+      margin-bottom: 13px;
+    }
+    .donate-price-img {
+      height: 80px;
+      border-radius: 4.34px;
+    }
+    .donate-price-detail {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .donate-price-title {
+      font-family: "Pretendard-SemiBold";
+      font-size: 1.1rem;
+    }
+    .price-donator {
+      color: #999999;
+      font-size: 0.9rem;
+    }
+    .donate-price-date {
+      margin-top: 17.3px;
+      color: #cfcfcf;
+      font-size: 0.9rem;
+      margin-left: auto;
+    }
+  }
 }
 
 .orderpay-page {
@@ -472,6 +511,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  overflow: hidden;
 }
 .icon-img {
   width: 21px;

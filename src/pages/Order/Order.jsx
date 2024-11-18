@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Price1 from "../../assets/img/Order/price/1.png";
+import PriceBox from "../../components/Order/PriceBox";
 import MapIcon from "../../assets/img/Order/map.png";
 import CallIcon from "../../assets/img/Order/call.png";
 import TimeIcon from "../../assets/img/Order/time.png";
@@ -8,6 +8,10 @@ import MenuBox from "../../components/Order/MenuBox";
 import HeartIcon from "../../assets/img/Order/heart.png";
 import OrderNavbar from "../../components/Nav/OrderNavbar";
 const Order = () => {
+  const [selectId, setSelectId] = useState(1);
+  const menuSelect = (id) => {
+    setSelectId(id);
+  };
   const [selectId, setSelectId] = useState(1);
   const menuSelect = (id) => {
     setSelectId(id);
@@ -70,6 +74,34 @@ const Order = () => {
             className={`toggle ${selectId === 3 ? "select" : ""}`}
           >
             리뷰
+            <div className="price-area">
+              <div className="cum-price">
+                누적 후원금 <span className="bolder">350,000원</span>
+              </div>
+              <div className="total-price">
+                총 후원금 <span className="yellow bolder">125,000원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="menu-bar">
+          <div
+            onClick={() => menuSelect(1)}
+            className={`toggle ${selectId === 1 ? "select" : ""}`}
+          >
+            메뉴
+          </div>
+          <div
+            onClick={() => menuSelect(2)}
+            className={`toggle ${selectId === 2 ? "select" : ""}`}
+          >
+            금액권 목록
+          </div>
+          <div
+            onClick={() => menuSelect(3)}
+            className={`toggle ${selectId === 3 ? "select" : ""}`}
+          >
+            리뷰
           </div>
         </div>
         <div className="order-bottom">
@@ -83,17 +115,12 @@ const Order = () => {
           )}
           {selectId === 2 && (
             <div className="menu-2-area">
-              <div className="reco-menu">금액권</div>
-              <div className="donate-price-box">
-                <div className="donate-price-img">
-                  <img src={Price1} alt="이미지" className="img-width" />
-                </div>
-                <div className="donate-price-detail">
-                  <div className="donate-price-title">5000원권</div>
-                  <div className="price-donator">후원자 이*림님</div>
-                  <div className="donate-price-date">후원날짜 2024.11.11</div>
-                </div>
-              </div>
+              <div className="donate-rate">5000-10000원</div>
+              <PriceBox price="5000" donator={"이*림"} date={"2024.11.11"} />
+              <PriceBox price="9000" donator={"이*림"} date={"2024.11.11"} />
+              <div className="donate-rate">11000-15000원</div>
+              <PriceBox price="12000" donator={"이*림"} date={"2024.11.11"} />
+              <PriceBox price="19000" donator={"이*림"} date={"2024.11.11"} />
             </div>
           )}
         </div>
