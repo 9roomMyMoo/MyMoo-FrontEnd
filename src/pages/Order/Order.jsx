@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import PriceBox from "../../components/Order/PriceBox";
-import PriceBox from "../../components/Order/PriceBox";
 import MapIcon from "../../assets/img/Order/map.png";
 import CallIcon from "../../assets/img/Order/call.png";
 import TimeIcon from "../../assets/img/Order/time.png";
@@ -13,7 +12,6 @@ const Order = () => {
   const menuSelect = (id) => {
     setSelectId(id);
   };
-
   return (
     <div className="order-page">
       <OrderNavbar text="떠밥 강남점" />
@@ -79,10 +77,17 @@ const Order = () => {
         <div className="order-bottom">
           {selectId === 1 && (
             <div className="menu-1-area">
-              <div className="reco-menu">추천 메뉴</div>
-              <MenuBox menu="(BEST) 동파육 덮밥" price="12,000원" />
-              <MenuBox menu="(BEST) 갈비 덮밥" price="11,000원" />
-              <MenuBox menu="마파두부 덮밥" price="11,000원" />
+              <div className="reco-menu-area">
+                <div className="reco-menu">추천 메뉴</div>
+                <MenuBox menu="(BEST) 동파육 덮밥" price="12,000원" />
+                <MenuBox menu="(BEST) 갈비 덮밥" price="11,000원" />
+                <MenuBox menu="마파두부 덮밥" price="11,000원" />
+              </div>
+              <div className="add-menu-area">
+                <div className="add-menu">추가 메뉴</div>
+                <MenuBox menu="(BEST) 동파육 덮밥" price="12,000원" />
+                <MenuBox menu="(BEST) 동파육 덮밥" price="12,000원" />
+              </div>
             </div>
           )}
           {selectId === 2 && (

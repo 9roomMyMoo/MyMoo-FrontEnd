@@ -46,14 +46,16 @@
   gap: 11px;
   background-color: white;
   cursor: pointer;
+  border-bottom: solid #e2e2e2 1px;
+  padding-bottom: 13px;
   .menu-detail {
     display: flex;
     gap: 8px;
   }
   .menu-img {
-    width: 39%;
-    height: 8rem;
-    border: #e2e2e2 solid 3px;
+    width: 50%;
+    height: 110px;
+    border: #e2e2e2 solid 2px;
     padding: 0.3rem;
     border-radius: 5px;
     overflow: hidden;
@@ -159,6 +161,7 @@
       font-size: 1rem;
       background-color: #ffe136;
       margin-top: 20px;
+      cursor: pointer;
     }
   }
   .menu-bar {
@@ -167,6 +170,7 @@
     justify-content: space-between;
     text-align: center;
     border-bottom: solid #e2e2e2 2px;
+    cursor: pointer;
     .toggle {
       flex: 1;
       color: #5c5c5c;
@@ -180,19 +184,30 @@
     }
   }
   .order-bottom {
-    display: flex;
-    flex-direction: column;
-    padding: 1.2rem 0.9rem;
-    gap: 12.9px;
     padding-bottom: 75px;
     background-color: white;
-
-    .reco-menu {
-      font-size: 1.3rem;
+    .reco-menu-area {
+      padding: 1.2rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 12.9px;
+    }
+    .reco-menu,
+    .add-menu {
+      font-size: 1.1rem;
       font-family: "Pretendard-SemiBold";
+      margin-bottom: 0.8rem;
+    }
+    .add-menu-area {
+      display: flex;
+      flex-direction: column;
+      gap: 12.9px;
+      padding: 1.2rem 0.9rem;
+      border-top: #f2f2f2 7px solid;
     }
   }
   .menu-2-area {
+    padding: 1.2rem 0.9rem;
     .donate-rate {
       color: #b3b3b3;
       font-size: 0.9rem;
@@ -200,6 +215,7 @@
       margin-bottom: 8px;
     }
     .donate-price-box {
+      cursor: pointer;
       display: flex;
       flex-direction: row;
       gap: 12px;
@@ -270,6 +286,7 @@
     padding: 0 2.5rem;
   }
   .orderpay-btn {
+    cursor: pointer;
     width: 39%;
     padding: 14px 0;
     border-radius: 30px;
@@ -408,6 +425,7 @@
       }
     }
     .order-btn {
+      cursor: pointer;
       background-color: #ffe136;
       border-radius: 5px;
       font-family: "Pretendard-SemiBold";
@@ -456,6 +474,7 @@
     font-family: "Pretendard-Regular";
   }
   .btn-area {
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -498,6 +517,7 @@
     }
 
     .btn-area {
+      cursor: pointer;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -555,6 +575,7 @@
       font-size: 1.2rem;
     }
     .reco-area {
+      cursor: pointer;
       margin-top: 11px;
       display: flex;
       flex-direction: row;
