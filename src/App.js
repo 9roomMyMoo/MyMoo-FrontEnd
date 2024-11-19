@@ -11,6 +11,7 @@ import OrderFinish from "./pages/Order/OrderFinish";
 import List from "./components/List/List";
 import Donate from "./pages/Donate/Donate";
 import QrScan from "./pages/shop/QrScan";
+import Main2 from "./components/Main/Main2";
 const App = () => {
   return (
     <BrowserRouter
@@ -20,6 +21,7 @@ const App = () => {
         <div className="app-main">
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/2" element={<Main2 />} />
             <Route path="/order/:place" element={<OrderMenu />} />
             <Route path="/search" element={<Search />} />
             <Route path="/list" element={<List />} />

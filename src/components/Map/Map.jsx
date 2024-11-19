@@ -8,7 +8,7 @@ const Map = () => {
   useEffect(() => {
     const loadKakaoMap = () => {
       const script = document.createElement("script");
-      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=1b4b306e390784f8a3c3b2430f6afd45&libraries=services`;
+      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=43c54f0fc07ce690e0bdb4a55145d1ab&libraries=services`;
       script.async = true;
       document.head.appendChild(script);
 
