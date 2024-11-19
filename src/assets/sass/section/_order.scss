@@ -527,7 +527,7 @@
       .thanks-btn {
         flex: 1;
         padding: 0.9rem 0;
-        font-family: "Pretendard-Medium";
+        font-family: "Pretendard-Regular";
         font-size: 1rem;
         border-radius: 30px;
         background-color: #e2e2e2;
@@ -535,7 +535,7 @@
       .orderlist-btn {
         flex: 1;
         padding: 0.9rem 0;
-        font-family: "Pretendard-Medium";
+        font-family: "Pretendard-Regular";
         font-size: 1rem;
         border-radius: 30px;
         background-color: #ffe136;
@@ -596,6 +596,10 @@
       .reco-res-title {
         font-family: "Pretendard-Medium";
         font-size: 0.9rem;
+      }
+      .grey {
+        font-family: "Pretendard-Regular";
+        font-size: 0.8rem;
       }
     }
   }
