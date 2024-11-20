@@ -141,7 +141,7 @@ const Order = () => {
                   <MenuBox
                     key={menu.id}
                     menu={menu.name}
-                    price={`${menu.price}원`}
+                    price={menu.price}
                     img={menu.imagePath}
                     des={menu.description}
                   />
@@ -151,7 +151,7 @@ const Order = () => {
                 <div className="add-menu">추가 메뉴</div>
                 <MenuBox
                   menu="음료수"
-                  price="2,000원"
+                  price={2000}
                   img={
                     "https://i.namu.wiki/i/UUUicJzYIISF6z27yGzgl6c-2vdffpFx0fPSI1gWx00LShUqTOUd5z9mYqPsmO-o8NM5ED6tOVwIa4Jz7NIJ4Q.webp"
                   }
@@ -159,7 +159,7 @@ const Order = () => {
                 />
                 <MenuBox
                   menu="단무지"
-                  price="1,000원"
+                  price={1000}
                   img={
                     "https://ppss.kr/wp-content/uploads/2016/07/0-540x360.jpg"
                   }

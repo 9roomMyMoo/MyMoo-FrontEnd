@@ -6,6 +6,8 @@ const MenuBox = ({ menu, price, img, des }) => {
   const GoOrderMenu = () => {
     navigate(`/order/${menu}`);
   };
+  const formattedPrice = price.toLocaleString();
+
   return (
     <div>
       <div className="flex-row menu-box" onClick={GoOrderMenu}>
@@ -15,7 +17,7 @@ const MenuBox = ({ menu, price, img, des }) => {
         <div className="menu-detail flex-col">
           <div className="menu-name">{menu}</div>
           <div className="menu-subtxt">{des}</div>
-          <div className="menu-price">{price}</div>
+          <div className="menu-price">{formattedPrice}원</div>
           <div className="menu-review">
             <img src={ReviewIcon} alt="icon" className="icon-img" />
             <span>리뷰쓰기</span>
