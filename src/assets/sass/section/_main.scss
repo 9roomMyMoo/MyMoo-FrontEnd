@@ -97,7 +97,7 @@
   }
 
   .divider {
-    height: 10px;
+    height: 7px;
     background-color: #efefef;
     margin: 10px 0;
   }
@@ -278,4 +278,180 @@
       }
     }
   }
+}
+
+//내 후원
+.donation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px auto;
+  width: 100%;
+  height: auto; 
+  margin-left: -10px;
+
+  .user-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    margin-right: 20px;
+
+
+    .user-details {
+      margin-bottom: 10px;
+
+      h3 {
+        margin: 0;
+        font-size: 9px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      p {
+        margin: 5px 0;
+        font-size: 8px;
+        color: #666;
+      }
+    }
+
+    .user-avatar {
+      width: 48px;
+      height: 48px;
+      background: #ffd000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .user-stats {
+      p {
+        margin: 5px 0;
+        font-size: 7px;
+        color: #666;
+
+        span {
+          font-weight: bold;
+          color: #ffd700;
+        }
+      }
+    }
+  }
+
+  .highlight-yellow {
+    color: #ffd700; 
+  }
+}
+
+//랭크
+.rank-container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.rank-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rank-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+
+  &:last-child {
+    border-bottom: none; 
+  }
+}
+
+.rank-left {
+  display: flex;
+  align-items: center;
+  margin-bottom: -5px;
+
+  .rank-number {
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .rank-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+
+  .rank-info {
+    display: flex;
+    flex-direction: column;
+
+    .rank-name {
+      font-size: 10px;
+      font-weight: bold;
+
+      .rank-gender {
+        font-size: 8px;
+        color: #888;
+      }
+    }
+
+    .rank-date {
+      font-size: 6px;
+      color: #aaa;
+    }
+  }
+}
+
+.rank-right {
+  text-align: right;
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+
+  .rank-amount {
+    font-size: 8px;
+    color: #aaa;
+    margin-left: 5px;
+  }
+
+  .rank-total {
+    font-size: 9px;
+    font-weight: bold;
+    color: #333;
+  }
+}
+
+.reviews-content {
+  display: flex;
+  margin-bottom: -25px;
+  overflow: hidden; 
+  flex-wrap: nowrap; 
+}
+
+.rank-card {
+ margin-left: -60px;
+ margin-top: -17px;
+}
+
+.donation-card{
+  margin-top: -25px;
+  z-index: 100;
+}
+
+.reviews {
+  overflow: hidden;
 }
