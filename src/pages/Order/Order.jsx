@@ -9,14 +9,15 @@ import HeartIcon from "../../assets/img/Order/heart.png";
 import OrderNavbar from "../../components/Nav/OrderNavbar";
 const Order = () => {
   const [menuCnt, setMenuCnt] = useState(0);
+  const [storeInfo, setStoreInfo] = useState([]);
   const [menuArr, setMenuArr] = useState([]);
   // 가게 정보
   const fetchStore = () => {
-    fetch(`https://api.mymoo.site/api/v1/stores/1/`, {
+    fetch(`https://api.mymoo.site/api/v1/stores/1`, {
       method: "GET",
       credentials: "include",
       headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzIxMjMyNDgsImV4cCI6MTczMjEyNTA0OCwidXNlcklkIjoyLCJhdXRoIjoiRE9OQVRPUiJ9.UJgQsnYFpJYxzNM-4-KNHvjCBusZNRnE9eFsHflRNmzcY-rwlTisJ2spH8dPHBTU2ygLOfZj7gpxeOXQE6N5SQ`,
+        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzIxMjQxMzYsImV4cCI6MTczMjEyNTkzNiwidXNlcklkIjoyLCJhdXRoIjoiRE9OQVRPUiJ9.gNtiP2CBsPBslVZuAiSnCZcZuX49BUu4Kj8hP4mQRtE-1EGBMXnCAwdbj9Ve5rdE2Gt9-3gLFhz_LHmDTAFJ9Q`,
         "Content-Type": "application/json",
       },
     })
@@ -25,9 +26,8 @@ const Order = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("Fetched data:", data, "d\n", data.menus[0]);
-        setMenuCnt(data.total_count);
-        setMenuArr(data.menus);
+        console.log("Fetched data:", data);
+        setStoreInfo(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -39,7 +39,7 @@ const Order = () => {
       method: "GET",
       credentials: "include",
       headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzIxMjMyNDgsImV4cCI6MTczMjEyNTA0OCwidXNlcklkIjoyLCJhdXRoIjoiRE9OQVRPUiJ9.UJgQsnYFpJYxzNM-4-KNHvjCBusZNRnE9eFsHflRNmzcY-rwlTisJ2spH8dPHBTU2ygLOfZj7gpxeOXQE6N5SQ`,
+        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzIxMjQxMzYsImV4cCI6MTczMjEyNTkzNiwidXNlcklkIjoyLCJhdXRoIjoiRE9OQVRPUiJ9.gNtiP2CBsPBslVZuAiSnCZcZuX49BUu4Kj8hP4mQRtE-1EGBMXnCAwdbj9Ve5rdE2Gt9-3gLFhz_LHmDTAFJ9Q`,
         "Content-Type": "application/json",
       },
     })
@@ -68,7 +68,7 @@ const Order = () => {
   };
   return (
     <div className="order-page">
-      <OrderNavbar text="떠밥 강남점" />
+      <OrderNavbar text={storeInfo.name} />
       <div>
         <div className="order-top">
           <div className="restaurant-img">
@@ -82,11 +82,11 @@ const Order = () => {
             <div className="info-heart-icon">
               <img src={HeartIcon} alt="img" className="heart-img" />
             </div>
-            <div className="restaurant-title">떠밥 강남점</div>
+            <div className="restaurant-title">{storeInfo.name}</div>
             <div className="restaurant-star">⭐⭐⭐ 3.9</div>
             <div className="restaurant-place detail-txt">
               <img src={MapIcon} alt="icon" className="icon-img" />
-              서울 강남구 강남대로84길 6 1층
+              {storeInfo.address}
             </div>
             <div className="restaurant-tel detail-txt">
               <img src={CallIcon} alt="icon" className="icon-img" />
@@ -98,10 +98,14 @@ const Order = () => {
             </div>
             <div className="price-area">
               <div className="cum-price">
-                누적 후원금 <span className="bolder">350,000원</span>
+                누적 후원금{" "}
+                <span className="bolder">{storeInfo.allDonation}원</span>
               </div>
               <div className="total-price">
-                총 후원금 <span className="yellow bolder">125,000원</span>
+                총 후원금{" "}
+                <span className="yellow bolder">
+                  {storeInfo.usableDonation}원
+                </span>
               </div>
             </div>
             <div className="donate-btn">식당 후원하기</div>
