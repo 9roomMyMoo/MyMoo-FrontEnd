@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PriceBox from "../../components/Order/PriceBox";
 import MapIcon from "../../assets/img/Order/map.png";
 import CallIcon from "../../assets/img/Order/call.png";
@@ -8,6 +8,60 @@ import MenuBox from "../../components/Order/MenuBox";
 import HeartIcon from "../../assets/img/Order/heart.png";
 import OrderNavbar from "../../components/Nav/OrderNavbar";
 const Order = () => {
+  const [menuCnt, setMenuCnt] = useState(0);
+  const [menuArr, setMenuArr] = useState([]);
+  // 가게 정보
+  const fetchStore = () => {
+    fetch(`https://api.mymoo.site/api/v1/stores/1/`, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzIxMjMyNDgsImV4cCI6MTczMjEyNTA0OCwidXNlcklkIjoyLCJhdXRoIjoiRE9OQVRPUiJ9.UJgQsnYFpJYxzNM-4-KNHvjCBusZNRnE9eFsHflRNmzcY-rwlTisJ2spH8dPHBTU2ygLOfZj7gpxeOXQE6N5SQ`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        console.log("Response status:", response.status);
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Fetched data:", data, "d\n", data.menus[0]);
+        setMenuCnt(data.total_count);
+        setMenuArr(data.menus);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  };
+  // 메뉴판
+  const fetchMenus = () => {
+    fetch(`https://api.mymoo.site/api/v1/stores/1/menus`, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzIxMjMyNDgsImV4cCI6MTczMjEyNTA0OCwidXNlcklkIjoyLCJhdXRoIjoiRE9OQVRPUiJ9.UJgQsnYFpJYxzNM-4-KNHvjCBusZNRnE9eFsHflRNmzcY-rwlTisJ2spH8dPHBTU2ygLOfZj7gpxeOXQE6N5SQ`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        console.log("Response status:", response.status);
+        return response.json();
+      })
+      .then((data) => {
+        setMenuCnt(data.total_count);
+        setMenuArr(data.menus);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  };
+
+  // fetchDashpage 호출을 useEffect 내부로 이동
+  useEffect(() => {
+    fetchStore();
+    fetchMenus();
+  }, []); // 빈 배열([])로 설정해 컴포넌트가 마운트될 때 한 번만 실행
+
   const [selectId, setSelectId] = useState(1);
   const menuSelect = (id) => {
     setSelectId(id);
@@ -79,14 +133,34 @@ const Order = () => {
             <div className="menu-1-area">
               <div className="reco-menu-area">
                 <div className="reco-menu">추천 메뉴</div>
-                <MenuBox menu="(BEST) 동파육 덮밥" price="12,000원" />
-                <MenuBox menu="(BEST) 갈비 덮밥" price="11,000원" />
-                <MenuBox menu="마파두부 덮밥" price="11,000원" />
+                {menuArr.map((menu) => (
+                  <MenuBox
+                    key={menu.id}
+                    menu={menu.name}
+                    price={`${menu.price}원`}
+                    img={menu.imagePath}
+                    des={menu.description}
+                  />
+                ))}
               </div>
               <div className="add-menu-area">
                 <div className="add-menu">추가 메뉴</div>
-                <MenuBox menu="(BEST) 동파육 덮밥" price="12,000원" />
-                <MenuBox menu="(BEST) 동파육 덮밥" price="12,000원" />
+                <MenuBox
+                  menu="음료수"
+                  price="2,000원"
+                  img={
+                    "https://i.namu.wiki/i/UUUicJzYIISF6z27yGzgl6c-2vdffpFx0fPSI1gWx00LShUqTOUd5z9mYqPsmO-o8NM5ED6tOVwIa4Jz7NIJ4Q.webp"
+                  }
+                  des={"시원한 음료수"}
+                />
+                <MenuBox
+                  menu="단무지"
+                  price="1,000원"
+                  img={
+                    "https://ppss.kr/wp-content/uploads/2016/07/0-540x360.jpg"
+                  }
+                  des={"시원한 단무지"}
+                />
               </div>
             </div>
           )}

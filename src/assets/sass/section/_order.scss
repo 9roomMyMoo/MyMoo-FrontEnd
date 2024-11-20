@@ -51,9 +51,10 @@
   .menu-detail {
     display: flex;
     gap: 8px;
+    flex: 1;
   }
   .menu-img {
-    width: 50%;
+    width: 39%;
     height: 110px;
     border: #e2e2e2 solid 2px;
     padding: 0.3rem;
@@ -79,7 +80,11 @@
     flex-direction: row;
     align-items: center;
     color: #999999;
-    font-family: "Pretendard-Regular";
+
+    span {
+      font-family: "Pretendard-Regular";
+      font-size: 0.9rem;
+    }
   }
 }
 .order-page {
@@ -621,7 +626,7 @@
   overflow: hidden;
 }
 .icon-img {
-  width: 21px;
+  width: 20px;
   display: flex;
 }
 .grey {
