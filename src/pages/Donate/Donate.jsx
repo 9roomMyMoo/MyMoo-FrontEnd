@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Donate = () => {
   const navigate = useNavigate();
   const [selectPrice, setSelectPrice] = useState(12000);
+
   return (
     <div className="donate-page">
       <OrderNavbar text={"후원하기"} />

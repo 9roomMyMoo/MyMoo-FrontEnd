@@ -13,6 +13,7 @@ import Donate from "./pages/Donate/Donate";
 import QrScan from "./pages/shop/QrScan";
 import Main2 from "./components/Main/Main2";
 import DonateFinish from "./pages/Donate/DonateFinish";
+import ShopFinish from "./pages/shop/ShopFinish";
 const App = () => {
   return (
     <BrowserRouter
@@ -32,8 +33,9 @@ const App = () => {
             <Route path="/list" element={<List />} />
             <Route path="/finish" element={<OrderFinish />} />
             <Route path="/donate" element={<Donate />} />
-            <Route path="/scan" element={<QrScan />} />
+            <Route path="/shop" element={<QrScan />} />
             <Route path="/donate/finish" element={<DonateFinish />} />
+            <Route path="/shop/finish" element={<ShopFinish />} />
           </Routes>
           <NavBar />
         </div>

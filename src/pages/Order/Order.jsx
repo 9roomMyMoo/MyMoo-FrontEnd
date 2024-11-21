@@ -14,7 +14,7 @@ const Order = () => {
   const [storeInfo, setStoreInfo] = useState([]);
   const [menuArr, setMenuArr] = useState([]);
   const [donateData, setDonateDate] = useState([]);
-  const token = `eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzIxOTg0MzIsImV4cCI6MTczMjIwMDIzMiwidXNlcklkIjoyLCJhdXRoIjoiRE9OQVRPUiJ9.Ey3hjRtx7PTf-gNLYT1206qAItKKzkHZXi9IftpCFpL0-7wXS0OB5OoRQFEC8dyv5hudx7a7105LvTDRLKFRuQ`;
+  const token = `eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MzIyMDA2MTYsImV4cCI6MTczMjIwMjQxNiwidXNlcklkIjoyLCJhdXRoIjoiRE9OQVRPUiJ9.5GiYMzzyEF1ZfleX_7hjAWXrhhoyCfrX3s9vFLOzt0XB-JdOMBIJBzxWrRaFl1Dq38BKpS9fpXvcV4dzQx0drQ`;
   // 가게 정보
   const fetchStore = () => {
     fetch(`https://api.mymoo.site/api/v1/stores/1`, {
