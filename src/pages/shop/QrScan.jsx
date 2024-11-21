@@ -1,7 +1,10 @@
 import { React, useState } from "react";
 import QrScanner from "react-qr-scanner";
+import Frame from "../../assets/img/Order/frame.png";
+import { useNavigate } from "react-router-dom";
 const QrScan = () => {
-  const [selected, setSelected] = useState("environment");
+  const navigate = useNavigate();
+
   const [startScan, setStartScan] = useState(false);
   const [loadingScan, setLoadingScan] = useState(false);
   const [data, setData] = useState("");
@@ -12,6 +15,7 @@ const QrScan = () => {
       setData(scanData.text);
       setStartScan(false);
       setLoadingScan(false);
+      navigate("/shop/finish", { state: { scannedData: scanData.text } });
     }
   };
 
@@ -20,38 +24,33 @@ const QrScan = () => {
   };
   return (
     <div>
-      <div className="App">
-        <h1>Hello QR Scanner</h1>
-        <h2>Last Scan: {data || "None"}</h2>
+      <div className="qr-scan-page">
+        <div className="qr-scan-area-bg"></div>
+        <div className="qr-scan-area-main">
+          <button
+            onClick={() => {
+              setStartScan(!startScan);
+              setData(""); // Reset scanned data on new scan start
+            }}
+          >
+            {startScan ? "인식 중단" : "결제하기"}
+          </button>
 
-        <button
-          onClick={() => {
-            setStartScan(!startScan);
-            setData(""); // Reset scanned data on new scan start
-          }}
-        >
-          {startScan ? "Stop Scan" : "Start Scan"}
-        </button>
-        {startScan && (
-          <>
-            <select
-              onChange={(e) => setSelected(e.target.value)}
-              value={selected}
-            >
-              <option value={"environment"}>Back Camera</option>
-              <option value={"user"}>Front Camera</option>
-            </select>
+          <div className="qr-scan-area">
+            <div className="frame-img">
+              <img src={Frame} alt="img" className="img-width" />
+            </div>
             <QrScanner
-              facingMode={selected}
               delay={500}
               onError={handleError}
               onScan={handleScan}
-              style={{ width: "300px" }}
+              style={{ width: "300px", height: "300px", objectFit: "cover" }}
             />
-          </>
-        )}
-        {loadingScan && <p>Loading...</p>}
-        {data !== "" && <p>Scanned Data: {data}</p>}
+          </div>
+          <div className="notice-txt">QR 코드를 스캔하세요.</div>
+          {loadingScan && <p>Loading...</p>}
+          {data !== "" && <p>인식결과: {data}</p>}
+        </div>
       </div>
     </div>
   );
