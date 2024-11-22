@@ -22,7 +22,6 @@ const Order = () => {
     const storedData = localStorage.getItem("mymoo");
     if (storedData) {
       const parsedData = JSON.parse(storedData);
-      console.log(parsedData);
       setUserRole(parsedData.role);
       setToken(parsedData["user-token"]);
     }
@@ -149,16 +148,18 @@ const Order = () => {
                 </span>
               </div>
             </div>
-            <div
-              className="donate-btn"
-              onClick={() =>
-                navigate("/donate", {
-                  state: { storeName },
-                })
-              }
-            >
-              식당 후원하기
-            </div>
+            {userRole === "DONATOR" && (
+              <div
+                className="donate-btn"
+                onClick={() =>
+                  navigate("/donate", {
+                    state: { storeName },
+                  })
+                }
+              >
+                식당 후원하기
+              </div>
+            )}
           </div>
         </div>
         <div className="menu-bar">
