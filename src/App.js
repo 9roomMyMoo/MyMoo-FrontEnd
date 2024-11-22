@@ -17,9 +17,10 @@ import List from "./components/List/List";
 import Donate from "./pages/Donate/Donate";
 import QrScan from "./pages/shop/QrScan";
 import Main2 from "./components/Main/Main2";
-
+import Thanks from "./pages/Thanks/Thanks";
 import DonateFinish from "./pages/Donate/DonateFinish";
 import ShopFinish from "./pages/shop/ShopFinish";
+import ThanksFinish from "./pages/Thanks/ThanksFinish";
 const App = () => {
   return (
     <BrowserRouter
@@ -48,6 +49,8 @@ const App = () => {
             <Route path="/shop" element={<QrScan />} />
             <Route path="/donate/finish" element={<DonateFinish />} />
             <Route path="/shop/finish" element={<ShopFinish />} />
+            <Route path="/thanks" element={<Thanks />} />
+            <Route path="/thanks/finish" element={<ThanksFinish />} />
           </Routes>
           <NavBar />
         </div>
