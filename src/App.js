@@ -12,6 +12,7 @@ import Signin from "./pages/Signin/Signin";
 import Signup from "./pages/Signup/Signup";
 import Signupadult from "./pages/Signup/SignUpAdult";
 import Signupchild from "./pages/Signup/SignUpChild";
+import Mypage from "./pages/Mypage/Mypage";
 import Splash from "./pages/Splash";
 import List from "./components/List/List";
 import Donate from "./pages/Donate/Donate";
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/signupchild" element={<Signupchild />} />
             <Route path="/signupadult" element={<Signupadult />} />
             <Route path="/splash" element={<Splash />} />
+            <Route path="/my" element={<Mypage />} />
           </Routes>
           <NavBar />
         </div>
