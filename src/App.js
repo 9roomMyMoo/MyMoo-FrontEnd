@@ -21,6 +21,7 @@ import Thanks from "./pages/Thanks/Thanks";
 import DonateFinish from "./pages/Donate/DonateFinish";
 import ShopFinish from "./pages/shop/ShopFinish";
 import ThanksFinish from "./pages/Thanks/ThanksFinish";
+import DonateList from "./pages/Donate/DonateList";
 const App = () => {
   return (
     <BrowserRouter
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="/shop/finish" element={<ShopFinish />} />
             <Route path="/thanks" element={<Thanks />} />
             <Route path="/thanks/finish" element={<ThanksFinish />} />
+            <Route path="/my/donatelist" element={<DonateList />} />
           </Routes>
           <NavBar />
         </div>
